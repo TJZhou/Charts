@@ -30,9 +30,9 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            chunks:[null],
-            template: './src/html/chart.html',
-            filename:'chart.html',
+            chunks:['index'],
+            template: './src/html/index.html',
+            filename:'index.html',
             minify:{
                 collapseWhitespace:true //折叠空白区域 也就是压缩代码
             },

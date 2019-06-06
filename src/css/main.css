@@ -1,5 +1,18 @@
 div{
-    margin-bottom: 100px;
+    margin-bottom: 3em;
+}
+body{ 
+    text-align:center
+} 
+
+a{text-decoration:none}
+a:link {color:rgb(71,158,224)} /* 未访问的链接 */
+a:visited {color:rgb(71,158,224)}	/* 已访问的链接 */
+a:hover {cursor: pointer;}	/* 鼠标移动到链接上 */
+
+.container{
+    font-size: 2em;
+    margin:100px auto;
 }
 #pieChart, #doughnutChart {
     min-height:800px;
