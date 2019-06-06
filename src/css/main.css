@@ -1,0 +1,17 @@
+div{
+    margin-bottom: 100px;
+}
+#pieChart, #doughnutChart {
+    min-height:800px;
+    min-width: 600px;
+}
+
+#barChart, #rowBarChart, #multiBarChart, #multiRowBarChart{
+    min-height:850px; 
+    min-width: 600px;
+}
+
+#lineChart, #lineChart2 {
+    min-height:800px;
+    min-width:600px;
+}
