@@ -15,6 +15,7 @@ module.exports = {
         pieChart: './src/js/pieChart.js',
         barChart: './src/js/barChart.js',
         lineChart:'./src/js/lineChart.js',
+        polygonChart: './src/js/polygonChart.js',
     },
     output: {
         filename: outputFilename,
@@ -57,6 +58,14 @@ module.exports = {
             chunks:['index', 'lineChart'],
             template: './src/html/lineChart.html',
             filename:'lineChart.html', 
+            minify:{
+                collapseWhitespace:true
+            },
+        }),
+        new HtmlWebpackPlugin({
+            chunks:['index', 'polygonChart'],
+            template: './src/html/polygonChart.html',
+            filename:'polygonChart.html', 
             minify:{
                 collapseWhitespace:true
             },

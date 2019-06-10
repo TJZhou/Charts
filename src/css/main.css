@@ -28,3 +28,8 @@ a:hover {cursor: pointer;}	/* 鼠标移动到链接上 */
     min-height:800px;
     min-width:600px;
 }
+
+#polygonChart{
+    min-height:800px;
+    min-width: 600px;
+}
