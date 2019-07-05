@@ -30,6 +30,7 @@ var barChartAttribute = {
         }
     },
     xAxis: {
+		gridLineColor: '#bbbbbb',
         type: 'category',
         labels: {
             style: {
@@ -38,6 +39,7 @@ var barChartAttribute = {
         }
     },
     yAxis: {
+		gridLineColor: '#bbbbbb',
         min: 0,
         labels: {
             style: {

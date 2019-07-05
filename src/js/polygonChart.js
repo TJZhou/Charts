@@ -40,6 +40,8 @@ var lineChartAttribute = {
     },
     xAxis: {
         type: 'category',
+        gridLineWidth: 1,
+		gridLineColor: '#bbbbbb',
         labels: {
             style: {
                 fontSize: 24,
@@ -50,14 +52,11 @@ var lineChartAttribute = {
     },
     yAxis: {
         min: 0,
+        gridLineWidth: 1,
+		gridLineColor: '#bbbbbb',
         labels: {
             style: {
                 fontSize: 24,
-            }
-        },
-        title: {
-            style: {
-                fontSize: 28,
             }
         },
         gridLineInterpolation: 'polygon',
@@ -105,7 +104,6 @@ var lineChartAttribute = {
 		}
 	},
     series: null
-    
 }
 
 /**
@@ -198,6 +196,10 @@ dataSet = [{
     name: '实际支出',
     data: [50000, 39000, 42000, 31000, 26000, 14000],
     pointPlacement: 'on'
+},{
+    name: '实际收入',
+    data: [60000, 49000, 45000, 50000, 44000, 40000],
+    pointPlacement: 'on'
 }];
 title = '预算与支出';
 subtitle = '数据来源: WorldClimate.com';
@@ -214,4 +216,4 @@ category = ['销售', '市场营销', '发展', '客户支持',
  * @param {long}   参数7: 动画效果持续时间，为0则无动画效果 
  * @param {Array}  参数8: 折线图数据
  */
- polygonChartSetting(polygonChart, true, title, subtitle, null, category, 2000, dataSet);
+ polygonChartSetting(polygonChart, false, title, subtitle, null, category, 2000, dataSet);

@@ -37,6 +37,7 @@ var lineChartAttribute = {
         enabled: false,
     },
     xAxis: {
+		gridLineColor: '#bbbbbb',
         type: 'category',
         labels: {
             style: {
@@ -45,6 +46,7 @@ var lineChartAttribute = {
         }
     },
     yAxis: {
+		gridLineColor: '#bbbbbb',
         min: 0,
         labels: {
             style: {
