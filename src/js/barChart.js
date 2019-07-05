@@ -1,17 +1,4 @@
-// 在 Highcharts 加载之后加载功能模块
-var Highcharts = require('highcharts');
-require('highcharts/modules/exporting')(Highcharts);
-
-/**
- * 颜色配置， 不写及为highcharts默认颜色配置方案
- */ 
-  	// Highcharts.setOptions({
-    //      colors:['rgb(88,105,120)','rgb(144,148,168)','rgb(161,170,186)',
-    //      'rgb(199,202,218)','rgb(212,212,212)','rgb(235,235,235)', 
- 	// 	]
- 	// });
-
-var barChartAttribute = {
+export var barChartAttribute = {
     chart: {
         type: 'column',
         marginRight: 30,
@@ -103,7 +90,7 @@ var barChartAttribute = {
  * @param {long}   animation: 动画效果持续时间，为0则无动画效果 
  * @param {Array}  dataset: 饼图数据
  */
-function barChartSetting(barChart, flag, title, subtitle, unit, category, animation, dataSet) {
+export function barChartSetting(barChart, flag, title, subtitle, unit, category, animation, dataSet) {
 
     // 若未取得数据 直接返回
     if (dataSet === undefined || dataSet === null) {
@@ -169,58 +156,3 @@ function barChartSetting(barChart, flag, title, subtitle, unit, category, animat
         })
     }
 }
-
-// ---------------------- 初始化纵向柱状图 ----------------------
-var title = "全球各大城市人口排行";
-var subtitle = "数据截止 2017-03，来源:Wikipedia"
-var dataSet = [{
-    name: "总人口",
-    data: [['上海', 24.25],['卡拉奇', 23.50],['北京', 21.51],
-    ['德里', 16.78],['拉各斯', 16.06],['天津', 15.20],['伊斯坦布尔', 14.16],
-    ['东京', 13.51],['广州', 13.08],['孟买', 12.44],['莫斯科', 12.19],
-    ['圣保罗', 12.03],['深圳', 10.46],['雅加达', 10.07]],
-}];
-
-var barChart = Highcharts.chart('barChart', Object.assign({}, barChartAttribute));
-
-/**
- * @param {Object} 参数0: 需要修改的柱图对象
- * @param {String} 参数1: 横向柱状图 bar 纵向柱状图 column
- * @param {String} 参数2: 图表名字 
- * @param {String} 参数3: 图表副标题，若不需要标题 参数2置空
- * @param {String} 参数4: 图表单位
- * @param {Array}  参数5: 多组数据时的图表类别分类，单组数据置空
- * @param {long}   参数6: 动画效果持续时间，为0则无动画效果 
- * @param {Array}  参数7: 饼图数据
- */
-barChartSetting(barChart, "column", title, subtitle, "人口(百万）", null, 1000, dataSet);
-
-
-// ---------------------- 初始化横向柱状图 ----------------------
-var rowBarChart = Highcharts.chart('rowBarChart', Object.assign({}, barChartAttribute));
-barChartSetting(rowBarChart, "bar", title, subtitle, "人口(百万)", null, 1000, dataSet);
-
-
-
-// ---------------------- 初始化横向多条例柱状图 ----------------------
-var multiBarChart = Highcharts.chart('multiBarChart', Object.assign({}, barChartAttribute));
-title = "各大洲人口变化";
-var category = ['非洲', '美洲', '亚洲', '欧洲', '大洋洲'];
-
-dataSet = 
-[{
-    name: '1800 年',
-    data: [107, 31, 635, 203, 2],
-}, {
-    name: '1900 年',
-    data: [133, 156, 947, 408, 6]
-}, {
-    name: '2008 年',
-    data: [973, 914, 4054, 732, 34]
-}];
-
-barChartSetting(multiBarChart, "bar", title, subtitle, "人口(百万)", category, 1000, dataSet);
-
-// ---------------------- 初始化纵向多条例柱状图 ----------------------
-var multiRowBarChart = Highcharts.chart('multiRowBarChart', Object.assign({}, barChartAttribute));
-barChartSetting(multiRowBarChart, "column", title, subtitle, "人口(百万)", category, 1000, dataSet);

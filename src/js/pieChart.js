@@ -1,18 +1,14 @@
-// 在 Highcharts 加载之后加载功能模块
-var Highcharts = require('highcharts');
-require('highcharts/modules/exporting')(Highcharts);
-
 /**
  * 颜色配置， 不写及为highcharts默认颜色配置方案
  */ 
-  	Highcharts.setOptions({
-         colors:['rgb(88,105,120)','rgb(144,148,168)','rgb(161,170,186)',
-         'rgb(199,202,218)','rgb(212,212,212)','rgb(235,235,235)', 
- 		]
- 	});
+  	// Highcharts.setOptions({
+    //      colors:['rgb(88,105,120)','rgb(144,148,168)','rgb(161,170,186)',
+    //      'rgb(199,202,218)','rgb(212,212,212)','rgb(235,235,235)', 
+ 	// 	]
+ 	// });
 
 // 饼图属性
-var pieChartAttribute = {
+export var pieChartAttribute = {
 	// 表格基本设置
 	chart: {
 		type: 'pie',
@@ -94,7 +90,7 @@ var pieChartAttribute = {
  * @param {int}    innerSize: 圆环大小 
  * @param {boolean}legend: 是否展示图例 
  */
-function pieChartSetting(pieChart, title, subtitle, animation, innerSize, legend, data) {
+export function pieChartSetting(pieChart, title, subtitle, animation, innerSize, legend, data) {
 
 	if (data === undefined || data === null || data.length === 0){
 		alert("未取得到数据");
@@ -152,31 +148,3 @@ function pieChartSetting(pieChart, title, subtitle, animation, innerSize, legend
 		});
 	}
 }
-
-//  ---------------------- 初始化饼图 ----------------------
-var pieChart = Highcharts.chart('pieChart', pieChartAttribute);
-
-// 饼图数据
-var data = [['Chrome', 300],['Chrome', 200],['IE', 100],
-['FireFox', 100],['Edge', 80],['Safari', 70],['Sogou Explore', 60],
-['Opera', 50],['Other', 50]];
-
-/**
- * @param {Object} 参数0: 需要修改的饼图对象
- * @param {String} 参数1: 图表名字 
- * @param {String} 参数2: 图表副标题，若不需要标题 参数2置空
- * @param {long}   参数3: 动画效果持续时间，为0则无动画效果 
- * @param {int}    参数4: 内部圆环（innerSize）大小，大于 0 小于100 
- * @param {boolean}参数5: 是否展示图例 
- * @param {Array}  参数6: 饼图数据
- */
-pieChartSetting(pieChart, "浏览器访问量占比", "数据截止 2017-03", 1000, 0, true, data);
-
-
-// ---------------------- 初始化圈图 ----------------------
-var doughnutChart = Highcharts.chart('doughnutChart', pieChartAttribute);
-
-data = [['Chrome', 300],['FireFox', 200],['IE', 100]];
-
-pieChartSetting(doughnutChart, "浏览器访问量占比", "数据截止 2017-03", 1000, 50, true, data);
-

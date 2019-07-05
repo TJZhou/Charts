@@ -1,18 +1,4 @@
-// 在 Highcharts 加载之后加载功能模块
-var Highcharts = require('highcharts');
-require('highcharts/modules/exporting')(Highcharts);
-require('highcharts/highcharts-more')(Highcharts);
-/**
- * 颜色配置， 不写及为highcharts默认颜色配置方案
- */ 
-  	// Highcharts.setOptions({
-    //      colors:['rgb(88,105,120)','rgb(144,148,168)','rgb(161,170,186)',
-    //      'rgb(199,202,218)','rgb(212,212,212)','rgb(235,235,235)', 
- 	// 	]
- 	// });
-
-     
-var lineChartAttribute = {
+export var polygonChartAttribute = {
     chart: {
         polar: true,
         type: 'line',
@@ -116,7 +102,7 @@ var lineChartAttribute = {
  * @param {long}   animation: 动画效果持续时间，为0则无动画效果 
  * @param {Array}  dataset: 折线图数据
  */
-function polygonChartSetting(lineChart, showDataLabel, title, subtitle,  unit, category, animation, dataSet) {
+export function polygonChartSetting(lineChart, showDataLabel, title, subtitle,  unit, category, animation, dataSet) {
 
     // 若未取得数据 直接返回
     if (dataSet === undefined || dataSet === null) {
@@ -186,34 +172,3 @@ function polygonChartSetting(lineChart, showDataLabel, title, subtitle,  unit, c
         })
     }
 }
-
-
-dataSet = [{
-    name: '预算拨款',
-    data: [43000, 19000, 60000, 35000, 17000, 10000],
-    pointPlacement: 'on'
-}, {
-    name: '实际支出',
-    data: [50000, 39000, 42000, 31000, 26000, 14000],
-    pointPlacement: 'on'
-},{
-    name: '实际收入',
-    data: [60000, 49000, 45000, 50000, 44000, 40000],
-    pointPlacement: 'on'
-}];
-title = '预算与支出';
-subtitle = '数据来源: WorldClimate.com';
-category = ['销售', '市场营销', '发展', '客户支持',
-'信息技术', '行政管理'];
- var polygonChart = Highcharts.chart('polygonChart', Object.assign({},lineChartAttribute));
- /**
- * @param {Object} 参数1: 需要修改的柱图对象
- * @param {String} 参数2: 是否在图标上显示数据
- * @param {String} 参数3: 表格标题 
- * @param {String} 参数4: 表格副标题 与表格标题都可置空
- * @param {String} 参数5: 图表在坐标轴Y轴上的单位
- * @param {Array}  参数6: 多组数据时的图表类别分类（x轴）
- * @param {long}   参数7: 动画效果持续时间，为0则无动画效果 
- * @param {Array}  参数8: 折线图数据
- */
- polygonChartSetting(polygonChart, false, title, subtitle, null, category, 2000, dataSet);

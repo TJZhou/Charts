@@ -14,6 +14,11 @@ a:hover {cursor: pointer;}	/* 鼠标移动到链接上 */
     font-size: 2em;
     margin:100px auto;
 }
+
+#pieChart, #doughnutChart, #barChart, #rowBarChart, #multiBarChart, #multiRowBarChart, #lineChart, #lineChart2, #polygonChart{
+    display: none;
+}
+
 #pieChart, #doughnutChart {
     min-height:800px;
     min-width: 600px;
