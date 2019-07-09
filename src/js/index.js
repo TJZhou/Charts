@@ -69,7 +69,7 @@ function initBarChart() {
 }
 
 
-// initPieChart();
+initPieChart();
 function initPieChart() {
     //  ---------------------- 初始化饼图 ----------------------
     var pieChart = Highcharts.chart('pieChart', pieChartAttribute);
@@ -101,7 +101,7 @@ function initPieChart() {
     pieChartSetting(doughnutChart, "浏览器访问量占比", "数据截止 2017-03", 1000, 50, true, data);
 }
 
-// initLineChart();
+initLineChart();
 function initLineChart() {
     // ---------------------- 初始化多组数据折线图图 ----------------------
     dataSet = [{
@@ -157,7 +157,7 @@ function initLineChart() {
 
 }
 
-// initPolygonChart();
+initPolygonChart();
 function initPolygonChart() {
     // ---------------------- 初始化极地图 ----------------------
     dataSet = [{
