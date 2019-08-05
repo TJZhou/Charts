@@ -1,17 +1,21 @@
+## 图表展示界面: 
 
-## Project Description : 
-* Implementation of Highcharts API
-* Encapsulate different charts
-* Pie chart, bar chart, radar, etc
+## 项目简介: 
+* 使用highCharts api 封装饼图、柱状图、折线图、极地图
+* 项目源码`/knowledge/apache-tomcat-6.0.44-pro/webapps/yango/dev/charts/sourceCode`
+* 图表中给出的数据均为模拟数据，后续数据库设计以及数据传入、读取暂未完成设计
 
-## Requirement :
-* Visual Studio code and a web browser which supports ES6. 
+## 环境搭建要求 :
+1. Visual Studio code/sublime/或其他文本编辑器
+2. 已安装npm
+3. webpack 服务器端口8088（可在webpack.config.js修改）
 
-
-## How to run :
+## 运行以及项目部署:
 * STEPS :
-1. Open a git bash shell.
-2. Execute the git clone command to clone this repository.
-3. Decide which chart you need, and call the function in index.js.
-4. Open a terminal, go to the project root directory. Run 'npm run build' and 'npm start'.
-
+1. 进入根目录
+2. 控制台执行`npm install` 安装依赖
+3. 在编辑器中打开要修改的文件
+4. 运行`npm start`在浏览器中调试修改后的界面效果
+5. 修改完成后在控制台运行`npm run build`将项目打包
+6. 将打包后的项目（dist文件夹下）发布到192.168.26.42服务器， 
+    目录 `/knowledge/apache-tomcat-6.0.44-pro/webapps/yango/dev/charts/view`
